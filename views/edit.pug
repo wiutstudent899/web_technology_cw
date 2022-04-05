@@ -5,7 +5,7 @@ block Content
         .formContainer
             if error
                 p.fail Please Fill in the Form
-            form(action = `/students/${Id}/edit`, method="post")
+            form(action = `/students/${id}/edit`, method="post")
                 .formElement
                     h3 Student name:
                     input(type="text" name='name' value = `${userData.name}`)
