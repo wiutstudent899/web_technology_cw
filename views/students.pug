@@ -1,0 +1,48 @@
+extends layout.pug
+block Content
+    .container2
+        p.studentsP Here is the list of students:
+         
+            table(border='1').tblList
+                tr
+                    th Id
+                    th Name
+                    th Student ID
+                    th Phone Number
+                    th Actions
+                each student in userData
+                    tr
+                        td #{student.id}
+                        td #{student.name}
+                        td #{student.student_id}
+                        td #{student.phone_number}
+                        td
+                            a.btnEdit(href=`/students/${student.id}/edit`) Edit
+                            a.btnDelete(href=`/students/${student.id}/delete`) Delete
+            //- tr
+            //-     td 002
+            //-     td rahul
+            //-     td 27
+            //-     td Edit Delete
+            //- tr
+            //-     td 003
+            //-     td john
+            //-     td 80
+            //-     td Edit Delete
+
+        //- .showStd 
+        //-     .headers 
+        //-         h2 Id 
+        //-         h2 Name
+        //-         h2 Student Id
+        //-         h2 Phone Number
+        //-         h2 Actions
+        //-     ul.studentList 
+        //-         li.listItem id
+        //-         li.listItem name
+        //-         li.listItem student id
+        //-         li.listItem phone number
+        //-         li
+        //-             button.btnEdit  Edit
+        //-         li
+        //-             button.btnDelete Delete
