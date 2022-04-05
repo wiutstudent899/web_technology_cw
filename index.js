@@ -2,7 +2,6 @@ const e = require('express');
 const express = require('express');
 const app = express();
 const sqlite3 = require('sqlite3').verbose();
-const validator = require('validator');
 
 // Creating connection with sqlite3 database
 const db = new sqlite3.Database(
