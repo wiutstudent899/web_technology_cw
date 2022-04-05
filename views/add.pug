@@ -1,0 +1,23 @@
+extends layout.pug
+block Content
+    .container2
+        p.studentsP CREATE NEW STUDENT
+        .formContainer
+            if success 
+                p.success Successfully added a new student record!
+            if error 
+                p.fail Please fill the Form
+            form(action="/add", method="post")
+                .formElement
+                    h3 Enter student name:
+                    input(type="text" name='name')
+                .formElement
+                    h3 Enter student id:
+                    input(type="number" name='studentId')
+                .formElement
+                    h3 Enter phone number:
+                    input(type="text" name='phoneNumber')
+                .formElement
+                    h3 Enter student email:
+                    input(type="email" name='email')
+                button.btnCreate CREATE
