@@ -95,7 +95,11 @@ app.post('/students/:id/edit', (req, res) => {
   const formData = req.body;
   const id = req.params.id;
 
-  if (formData.name.length === 0) {
+  if (
+    formData.name.length === 0 ||
+    formData.studentId.length === 0 ||
+    formData.phoneNumber.length === 0
+  ) {
     db.get('select * from students where id=?', id, (err, row) => {
       if (err) throw err;
 
