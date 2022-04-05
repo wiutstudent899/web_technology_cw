@@ -34,4 +34,4 @@ node index
 https://github.com/wiutstudent899/web_technology_cw.git
 
 ### Link to the Website URL
-https://glitch.com/edit/#!/chambray-pointy-shovel
+https://chambray-pointy-shovel.glitch.me
