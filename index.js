@@ -122,3 +122,5 @@ app.post('/students/:id/edit', (req, res) => {
     res.redirect('/students');
   }
 });
+
+app.listen(3000)
