@@ -71,3 +71,16 @@ app.post('/add', (req, res) => {
     );
   }
 });
+
+// deleting a record
+app.get('/students/:id/delete', (req, res) => {
+  const StudentId = req.params.id;
+
+  db.run('DELETE FROM students where id=?', StudentId, (err) => {
+    if (err) throw err;
+
+    db.all('SELECT * FROM students', [], (err, rows) => {
+      res.render('students', { userData: rows });
+    });
+  });
+});
