@@ -84,3 +84,41 @@ app.get('/students/:id/delete', (req, res) => {
     });
   });
 });
+
+app.get('/students/:id/edit', (req, res) => {
+  const id = req.params.id;
+  db.get('select * from students where id=?', id, (err, row) => {
+    res.render('edit', { userData: row, id: id });
+  });
+});
+
+app.post('/students/:id/edit', (req, res) => {
+  const formData = req.body;
+  const id = req.params.id;
+
+  if (formData.name.length === 0) {
+    db.get('select * from students where id=?', id, (err, row) => {
+      if (err) throw err;
+
+      res.render('edit', { userData: row, id: id, error: true });
+    });
+  } else {
+    let update =
+      'update students set name = ?, student_id = ?, phone_number = ?, email = ? where id = ?';
+
+    db.run(
+      update,
+      [
+        formData.name,
+        formData.studentId,
+        formData.phoneNumber,
+        formData.email,
+        id,
+      ],
+      (err) => {
+        if (err) throw err;
+      }
+    );
+    res.redirect('/students');
+  }
+});

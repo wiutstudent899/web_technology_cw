@@ -1,0 +1,21 @@
+extends layout.pug
+block Content
+    .container2
+        p.studentsP Edit:
+        .formContainer
+            if error
+                p.fail Please Fill in the Form
+            form(action = `/students/${Id}/edit`, method="post")
+                .formElement
+                    h3 Student name:
+                    input(type="text" name='name' value = `${userData.name}`)
+                .formElement
+                    h3 Student id:
+                    input(type="number" name='studentId' value = `${userData.student_id}`)
+                .formElement
+                    h3 Phone number:
+                    input(type="text" name='phoneNumber' value = `${userData.phone_number}`)
+                .formElement
+                    h3 Student email:
+                    input(type="email" name='email' value = `${userData.email}`)
+                button.btnUpdate Save
