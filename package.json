@@ -1,0 +1,24 @@
+{
+  "name": "webtechcw",
+  "version": "1.0.0",
+  "description": "Web Technology Coursework",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.3",
+    "pug": "^3.0.2",
+    "sqlite3": "^5.0.2"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wiut-jalol/WebTechCW.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wiut-jalol/WebTechCW/issues"
+  },
+  "homepage": "https://github.com/wiut-jalol/WebTechCW#readme"
+}
